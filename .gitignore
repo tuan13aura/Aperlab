@@ -1,0 +1,25 @@
+# ─── Sistema operativo / editor ──────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*~
+*.swp
+
+# ─── File di lavoro / backup NON parte del sito pubblicato ────
+# Copie di versioni precedenti, immagini personali, screenshot di lavoro
+uploads/
+.thumbnail
+
+# ─── Dipendenze (il sito usa CDN: nessuna build necessaria) ───
+node_modules/
+
+# ─── Log / variabili d'ambiente ──────────────────────────────
+*.log
+npm-debug.log*
+.env
+.env.*
+
+# ─── Output temporanei / file di test ────────────────────────
+_shot*.png
+_test*.html
