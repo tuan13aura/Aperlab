@@ -585,6 +585,11 @@ img { display: block; max-width: 100%; }
 .slide-in--right { transform: translateX(80px); }
 .slide-in--left { transform: translateX(-80px); }
 .slide-in.is-in { opacity: 1; transform: none; }
+@media (max-width: 760px) {
+  .slide-in--right { transform: translateX(16px); }
+  .slide-in--left { transform: translateX(-16px); }
+  html, body { overflow-x: hidden; }
+}
 @media (prefers-reduced-motion: reduce) {
   .slide-in { opacity: 1; transform: none; transition: none; }
 }
@@ -664,11 +669,51 @@ img { display: block; max-width: 100%; }
 @media (max-width: 900px) {
   .svc-row { grid-template-columns: 1fr !important; gap: 14px !important; }
   .svc-row .mono { display: none; }
-  /* collapse any inline multi-column grid inside content sections */
+  /* collapse any inline multi-column grid inside content sections (element itself OR nested descendants) */
+  .hero[style*="grid-template-columns"],
+  .wrap[style*="grid-template-columns"],
+  .section[style*="grid-template-columns"],
   .hero [style*="grid-template-columns"],
-  .section [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-  .mock [style*="grid-template-columns"] { grid-template-columns: 1fr 1fr 1fr !important; }
+  .section [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: clamp(18px, 4vw, 34px) !important; }
+  /* keep the decorative browser-mock product grid at 3 columns */
+  .mock[style*="grid-template-columns"],
+  .mock [style*="grid-template-columns"] { grid-template-columns: 1fr 1fr 1fr !important; gap: 10px !important; }
   .sticky-reset { position: static !important; }
+}
+
+@media (max-width: 720px) {
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .btn-row .btn { width: 100%; justify-content: center; }
+  .nav__inner { padding-inline: clamp(16px, 6vw, 24px); grid-template-columns: auto 1fr auto; }
+  .mobile-menu { position: absolute; left: 0; right: 0; top: 100%; box-shadow: 0 20px 50px rgba(15,16,33,.12); border-radius: 0 0 var(--r-lg) var(--r-lg); }
+  .mobile-menu .nav__link { width: 100%; }
+  .footer__grid { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 600px) {
+  /* declutter the mobile header: only logo + burger menu */
+  .nav__cta .btn { display: none; }
+  .nav__inner { grid-template-columns: 1fr auto; }
+}
+
+@media (max-width: 900px) {
+  /* On phones the hero text spans full width and overlaps the darker areas
+     of the background photo (e.g. the woman's dark hair). Strengthen the
+     readability veil so dark text stays legible everywhere; the photo still
+     shows through, fading in toward the bottom of the hero. */
+  .hero-scrim {
+    background: linear-gradient(180deg,
+      rgba(255,248,251,.96) 0%,
+      rgba(255,248,251,.92) 46%,
+      rgba(255,248,251,.8) 66%,
+      rgba(255,248,251,.4) 100%) !important;
+  }
+  .hero-lead {
+    color: var(--ink);
+    font-weight: 500;
+    text-shadow: 0 1px 10px rgba(255,248,251,.9);
+  }
 }
 
 /* ---------- service row: animated lime neon border ---------- */
@@ -779,3 +824,30 @@ img { display: block; max-width: 100%; }
     0 18px 50px -18px rgba(255,180,212,.55);
 }
 .note--featured strong { color: var(--pink-deep); }
+
+/* responsive */
+@media (max-width: 450px) {
+  h2 {
+    font-size: 35px !important;
+  }
+  .hero{
+    padding-top: 0;
+  }
+  .hero > div:first-child {
+    margin: 0 20px;
+    position: relative !important;
+    width: calc(100% - 40px);
+    height: 450px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    background-size: 180% !important;
+    background-repeat: no-repeat;
+    background-position: 60% center !important;
+  }
+  .hero > div + div {
+    display: none;
+  }
+  .reveal.card h3 {
+    font-size: 27px !important;
+  }
+}

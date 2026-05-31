@@ -11,7 +11,7 @@ function PreviewsPage() {
           <Reveal as="h1" className="display" style={{ marginTop: 20, textShadow: "0 1px 18px rgba(255,255,255,.7)" }}>
             Scopri cosa possiamo creare per attività come la tua.
           </Reveal>
-          <Reveal as="p" className="lead" style={{ marginTop: 22, color: "var(--ink)", opacity: 1, fontSize: "19px", width: "602px", textShadow: "0 1px 12px rgba(255,255,255,.6)" }}>
+          <Reveal as="p" className="lead" style={{ marginTop: 22, color: "var(--ink)", opacity: 1, fontSize: "19px", maxWidth: "min(100%, 620px)", textShadow: "0 1px 12px rgba(255,255,255,.6)" }}>
             Le anteprime mostrano possibili direzioni visive e funzionali per siti web pensati per attività
             locali, negozi, ristoranti, professionisti e servizi. L'anteprima non è un modello standard, ma un primo studio pensato per aiutarti a comprendere il potenziale del progetto prima di prendere una decisione.
           </Reveal>

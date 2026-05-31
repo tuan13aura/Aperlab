@@ -46,7 +46,7 @@
           <Nav />
           <main key={route}>{page}</main>
           <Footer />
-          <WaFloat />
+          {route !== "/contatti" && <WaFloat />}
         </React.Fragment>
       );
     }

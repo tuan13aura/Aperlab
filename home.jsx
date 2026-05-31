@@ -267,15 +267,15 @@ function HomePage() {
       }}>
         {/* blurred background image */}
         <div aria-hidden="true" style={{
-          position: "absolute", inset: "-40px",
+          position: "absolute", inset: 0,
           backgroundImage: "url('assets/hero-bg.jpeg')",
           backgroundSize: "cover",
-          backgroundPosition: "bottom left",
-          transform: "scale(1.5)",
+          backgroundPosition: "center center",
+          transform: "none",
           zIndex: 0
         }} />
         {/* readability scrims */}
-        <div aria-hidden="true" style={{
+        <div aria-hidden="true" className="hero-scrim" style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 248, 251, .1) 100%)",
           zIndex: 1
@@ -286,7 +286,7 @@ function HomePage() {
             <Reveal as="h1" className="display" style={{ marginTop: 22, fontSize: "clamp(40px, 7.2vw, 85px)" }}>
               Scopri come potrebbe diventare il sito della tua <span style={{ display: "inline-block", background: "var(--lime)", padding: "0 .15em", borderRadius: 6, fontSize: "0.92em", transform: "rotate(1.5deg)", transformOrigin: "50% 70%" }}>attività</span>.
             </Reveal>
-            <Reveal as="p" className="lead" style={{ marginTop: 24 }}>
+            <Reveal as="p" className="lead hero-lead" style={{ marginTop: 24 }}>
               Aperlab progetta siti web, cataloghi digitali e soluzioni online per attività locali
               che vogliono presentarsi meglio, ricevere più contatti e valorizzare i propri servizi.
             </Reveal>
