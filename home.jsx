@@ -260,7 +260,7 @@ function HomePage() {
   return (
     <div className="page-enter">
       {/* ---------- HERO ---------- */}
-      <section className="hero" style={{
+      <section className="hero hero--photo" style={{
         backgroundColor: "var(--cream)",
         position: "relative",
         overflow: "hidden"

@@ -691,12 +691,6 @@ img { display: block; max-width: 100%; }
   .footer__bottom { flex-direction: column; align-items: stretch; }
 }
 
-@media (max-width: 600px) {
-  /* declutter the mobile header: only logo + burger menu */
-  .nav__cta .btn { display: none; }
-  .nav__inner { grid-template-columns: 1fr auto; }
-}
-
 @media (max-width: 900px) {
   /* On phones the hero text spans full width and overlaps the darker areas
      of the background photo (e.g. the woman's dark hair). Strengthen the
@@ -830,10 +824,10 @@ img { display: block; max-width: 100%; }
   h2 {
     font-size: 35px !important;
   }
-  .hero{
+  .hero--photo{
     padding-top: 0;
   }
-  .hero > div:first-child {
+  .hero--photo > div:first-child {
     margin: 0 20px;
     position: relative !important;
     width: calc(100% - 40px);
@@ -844,7 +838,7 @@ img { display: block; max-width: 100%; }
     background-repeat: no-repeat;
     background-position: 60% center !important;
   }
-  .hero > div + div {
+  .hero--photo > div + div {
     display: none;
   }
   .reveal.card h3 {
