@@ -23,3 +23,9 @@ npm-debug.log*
 # ─── Output temporanei / file di test ────────────────────────
 _shot*.png
 _test*.html
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
